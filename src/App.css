@@ -1,0 +1,128 @@
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        font-family:Helvetica;
+        vertical-align: baseline;
+    }
+#topbar{
+  display:flex;
+  position:fixed;
+  width:100%;
+  height:60px;
+  background-color:lightgrey;
+  z-index:1;
+}
+#heading{
+  margin-left:10px;
+  display:flex;
+  font-size:45px;
+  color:snow;
+}
+#heading p{
+  color:maroon;
+  font-family:"Courier New";
+}
+#main{
+  background-color:snow;
+  position:absolute;
+  display:flex;
+  width:100%;
+  height:100%;
+  justify-content: center;
+  margin-top:60px;
+}
+#submain{
+  width:90%;
+  display:flex;
+  justify-content: center;
+
+}
+#todos{
+  width:100%;
+}
+#newtodo{
+  width:100%;
+  margin-top:15%;
+}
+#newtodo p{
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+#instr{
+  display:flex;
+  justify-content:center;
+}
+#todo-form{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+#newTitle{
+  width:90%;
+  height:60px;
+  border: black 2px solid;
+  border-radius: 8px;
+  padding-left:3px;
+  padding-right:3px;
+  font-size: 24px;
+}
+
+#newsubmit{
+  width: 40px;
+  height: 40px;
+  background-color:limegreen;
+  color:white;
+  font-size:28px;
+  border-radius:8px;
+  margin-left:2%;
+  border: black solid 1px;
+}
+#newsubmit:hover{
+  background-color:green;
+}
+.todo{
+  width:100%;
+  float:left;
+  margin-top:15px;
+  border-bottom:solid darkgrey 2px;
+}
+.todo p{
+  display:inline-block;
+  max-width:75%;
+  margin-left:5px;
+  font-size: 24px;
+}
+.todo.complete{
+  color:grey;
+}
+.todo.complete p{
+  text-decoration: line-through;
+}
+.check{
+  width: 20px;
+  height: 20px;
+  float:left;
+  background-color:lightgrey;
+  margin-top:0.5%;
+  border-radius:16px;
+  margin-left: 7px;
+}
+.check:hover{
+  background-color:grey;
+}
+.delete{
+background-color:red;
+color:white;
+width:30px;
+height:30px;
+float:right;
+border-radius:8px;
+}
+.delete:hover{
+  background-color:darkred;
+}
