@@ -45,11 +45,22 @@
 }
 #newtodo{
   width:100%;
-  margin-top:15%;
+  margin:0px;
+  justify-content: center;
+  vertical-align: center;
+  border=bottom: solid grey 2px;
+  height: 30px;
+}
+.list{
+  margin:10px;
+  padding:10px;
+  line-height:20px;
 }
 #newtodo p{
   font-size: 24px;
-  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-top: 5px;
+  float: left;
 }
 #instr{
   display:flex;
@@ -125,4 +136,7 @@ border-radius:8px;
 }
 .delete:hover{
   background-color:darkred;
+}
+#sort{
+  height: 60px;
 }

@@ -2,16 +2,33 @@ import React, { Component } from 'react';
 import './Todo.css';
 
 class Todo extends Component {
-  render() {
+
+  completeItem = e => {
+    const complete = {check: 0}
+    this.setState({
+      complete,
+    })
+  }
+
+  createTodo = item => {
     return (
-      <section id="todos">
-        <aside id="newtodo">
-          <div id="instr">
-            <p>Instructions: 1.Write a ToDo 2.Hit Submit 3.Refresh to see your Todo on the Page!</p>
-          </div>
-        </aside>
-      </section>
-    );
+      <div key={item.key} id="newtodo">
+      <input type="checkbox" className="check" onClick={() =>
+      this.props.completeItem(item.key)}></input>
+      <p>{item.text}</p>
+      <button className="delete" onClick={() =>
+      this.props.deleteItem(item.key)}>
+      -
+      </button>
+    </div>
+    )
+  }
+
+  render() {
+      const todoEntries = this.props.entries
+      const listItems = todoEntries.map(this.createTodo)
+
+        return <ul className="list">{listItems}</ul>
   }
 }
 
