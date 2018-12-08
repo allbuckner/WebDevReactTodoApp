@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Todo from './Todo';
 import NewTodo from './NewTodo';
-var key = "62d17883c4e63242408ac97d73dd14774342872db130e2f4f243127d85ca701f";
+var key2 = "dcb17b3baadbf0cec3d9435051b3d3877c8a42cb5bafe39c78c9a7b5ce9f1236";
 
 
 class App extends Component {
@@ -12,6 +12,11 @@ class App extends Component {
       items: [],
       currentItem: {text:'', key:'', check: 1},
     }
+    this.handleInput = this.handleInput.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
+    this.sortItemsAlpha = this.sortItemsAlpha.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
 
@@ -27,11 +32,7 @@ class App extends Component {
     const newItem = this.state.currentItem
     if (newItem.text !== ''){
       console.log(newItem)
-      const items = [...this.state.items, newItem]
-      this.setState({
-        items: items,
-        currentItem: {text: '', key: '', check: 1},
-      })
+      console.log(this.props.key);
     }
     var data = {
       text: newItem.text
@@ -48,12 +49,11 @@ class App extends Component {
           items:[...self.state.items, JSON.parse(this.responseText)]
         })
     }
-
+  }
     createRequest.open("POST", "https://api.kraigh.net/todos", true);
     createRequest.setRequestHeader("Content-type", "application/json");
-    createRequest.setRequestHeader("x-api-key", key);
+    createRequest.setRequestHeader("x-api-key", key2);
     createRequest.send(JSON.stringify(data));
-  }
 }
   deleteItem = key => {
     const filteredItems = this.state.items.filter(item => {
@@ -62,6 +62,25 @@ class App extends Component {
     this.setState({
       items: filteredItems,
     })
+
+    var self = this;
+    var removeRequest = new XMLHttpRequest();
+
+    removeRequest.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200){
+        self.setState({
+          items:[...self.state.items]
+        })
+      }
+      else if (this.readyState === 4){
+        console.log(this.responseText)
+      }
+    }
+
+    removeRequest.open("DELETE", "https://api.kraigh.net/todos/" + key, true);
+    removeRequest.setRequestHeader("Content-type", "application/json");
+    removeRequest.setRequestHeader("x-api-key", key2);
+    removeRequest.send();
   }
 
   completeItem = e => {
@@ -70,10 +89,16 @@ class App extends Component {
       complete,
     })
   }
-  sortItems()
+  sortItemsAlpha()
   {
-    this.state.sort(function (a,b) {
+    console.log("alpha");
+    const self = this;
+    let vari = this.state.items;
+    vari.sort(function (a,b) {
       return a.text.localeCompare(b.text);
+    });
+    self.setState({
+      items:vari
     })
   }
 
@@ -83,13 +108,11 @@ class App extends Component {
     var listRequest = new XMLHttpRequest();
     listRequest.onreadystatechange = function(){
       if (this.readyState === 4 && this.status === 200) {
-        var test = JSON.parse(listRequest.responseText)
-        console.log(test)
-        //self.setState({items: JSON.parse(this.responseText)});
+        self.setState({items: JSON.parse(this.responseText)});
       }
     }
     listRequest.open("GET", "https://api.kraigh.net/todos", true);
-    listRequest.setRequestHeader("x-api-key", key);
+    listRequest.setRequestHeader("x-api-key", key2);
     listRequest.send();
 
   }
@@ -104,8 +127,7 @@ class App extends Component {
         </div>
         <div id="main">
           <div id="submain">
-            <button id="sort" onClick={() =>
-            this.props.check}>Sort by Time</button>
+            <button id="sort" onClick={this.sortItemsAlpha}> Sort Alphabetically </button>
             <section id="todos">
               <NewTodo
                 addItem={this.addItem}

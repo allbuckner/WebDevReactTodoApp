@@ -3,6 +3,7 @@ import './Todo.css';
 
 class Todo extends Component {
 
+
   completeItem = e => {
     const complete = {check: 0}
     this.setState({
@@ -13,8 +14,7 @@ class Todo extends Component {
   createTodo = item => {
     return (
       <div key={item.key} id="newtodo">
-      <input type="checkbox" className="check" onClick={() =>
-      this.props.completeItem(item.key)}></input>
+      <input type="checkbox" className="check"/>
       <p>{item.text}</p>
       <button className="delete" onClick={() =>
       this.props.deleteItem(item.key)}>
