@@ -56,20 +56,18 @@ class App extends Component {
     createRequest.send(JSON.stringify(data));
 }
   deleteItem = key => {
-    const filteredItems = this.state.items.filter(item => {
-      return item.key !== key
-    })
-    this.setState({
-      items: filteredItems,
-    })
+
 
     var self = this;
     var removeRequest = new XMLHttpRequest();
 
     removeRequest.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200){
+        const filteredItems = self.state.items.filter(item => {
+          return item.id !== key;
+        })
         self.setState({
-          items:[...self.state.items]
+          items: filteredItems,
         })
       }
       else if (this.readyState === 4){
