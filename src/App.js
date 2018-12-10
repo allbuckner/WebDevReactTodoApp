@@ -64,7 +64,7 @@ class App extends Component {
     removeRequest.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200){
         const filteredItems = self.state.items.filter(item => {
-          return item.id !== key;
+          return item.id !== key
         })
         self.setState({
           items: filteredItems,
