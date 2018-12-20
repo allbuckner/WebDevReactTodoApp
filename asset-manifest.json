@@ -1,13 +1,13 @@
 {
-  "main.css": "/08-todo-react/static/css/main.d16fef05.chunk.css",
-  "main.js": "/08-todo-react/static/js/main.9479e3b6.chunk.js",
-  "main.js.map": "/08-todo-react/static/js/main.9479e3b6.chunk.js.map",
-  "static/js/1.cd0319fc.chunk.js": "/08-todo-react/static/js/1.cd0319fc.chunk.js",
-  "static/js/1.cd0319fc.chunk.js.map": "/08-todo-react/static/js/1.cd0319fc.chunk.js.map",
-  "runtime~main.js": "/08-todo-react/static/js/runtime~main.2ba01b30.js",
-  "runtime~main.js.map": "/08-todo-react/static/js/runtime~main.2ba01b30.js.map",
-  "static/css/main.d16fef05.chunk.css.map": "/08-todo-react/static/css/main.d16fef05.chunk.css.map",
-  "index.html": "/08-todo-react/index.html",
-  "precache-manifest.dc35154f1bbed68d06729596793cccd2.js": "/08-todo-react/precache-manifest.dc35154f1bbed68d06729596793cccd2.js",
-  "service-worker.js": "/08-todo-react/service-worker.js"
+  "main.css": "/08-todo-react-PureWaterFiend/static/css/main.d16fef05.chunk.css",
+  "main.js": "/08-todo-react-PureWaterFiend/static/js/main.9479e3b6.chunk.js",
+  "main.js.map": "/08-todo-react-PureWaterFiend/static/js/main.9479e3b6.chunk.js.map",
+  "static/js/1.cd0319fc.chunk.js": "/08-todo-react-PureWaterFiend/static/js/1.cd0319fc.chunk.js",
+  "static/js/1.cd0319fc.chunk.js.map": "/08-todo-react-PureWaterFiend/static/js/1.cd0319fc.chunk.js.map",
+  "runtime~main.js": "/08-todo-react-PureWaterFiend/static/js/runtime~main.357f3eea.js",
+  "runtime~main.js.map": "/08-todo-react-PureWaterFiend/static/js/runtime~main.357f3eea.js.map",
+  "static/css/main.d16fef05.chunk.css.map": "/08-todo-react-PureWaterFiend/static/css/main.d16fef05.chunk.css.map",
+  "index.html": "/08-todo-react-PureWaterFiend/index.html",
+  "precache-manifest.d278ce82c9d0fc6f5d00cb6f465c191b.js": "/08-todo-react-PureWaterFiend/precache-manifest.d278ce82c9d0fc6f5d00cb6f465c191b.js",
+  "service-worker.js": "/08-todo-react-PureWaterFiend/service-worker.js"
 }

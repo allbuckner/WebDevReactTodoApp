@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/08-todo-react/precache-manifest.dc35154f1bbed68d06729596793cccd2.js"
+  "/08-todo-react-PureWaterFiend/precache-manifest.d278ce82c9d0fc6f5d00cb6f465c191b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/08-todo-react/index.html", {
+workbox.routing.registerNavigationRoute("/08-todo-react-PureWaterFiend/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
